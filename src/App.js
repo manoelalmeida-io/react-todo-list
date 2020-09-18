@@ -8,6 +8,8 @@ import Filter from './components/Filter';
 import TaskList from './components/TaskList';
 import { TasksContext } from './TasksContext';
 
+import { TodoList } from './styles';
+
 function App() {
   const [filter, setFilter] = useState('');
   const [tasks, setTasks] = useState([]);
@@ -25,12 +27,12 @@ function App() {
   return (
     <div className="App">
       <TasksContext.Provider value={{ tasks, setTasks }}>
-        <div>
+        <TodoList>
           <Header/>
           <TaskForm />
           <Filter filterCallback={changeFilter}/>
           <TaskList filter={filter} />
-        </div>
+        </TodoList>
       </TasksContext.Provider>
     </div>
   );

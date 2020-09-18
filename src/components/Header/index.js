@@ -1,21 +1,21 @@
 import React, { useContext } from 'react';
 import { TasksContext } from '../../TasksContext';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 function Header() {
   const { tasks } = useContext(TasksContext);
 
   return (
-    <header>
+    <Container>
       <div>
-        <div>{tasks.filter(task => task.completed).length}</div>
+        <div className="completed">{tasks.filter(task => task.completed).length}</div>
         <div>
-          <div>Tasks</div>
-          <div>/{tasks.length}</div>
+          <div className="tasks">Tasks</div>
+          <div className="remaining">/{tasks.length}</div>
         </div>
       </div>
-    </header>
+    </Container>
   );
 }
 
