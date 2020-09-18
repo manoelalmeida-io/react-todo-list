@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { TasksContext } from '../../TasksContext';
 
 // import { Container } from './styles';
 
-function Header({ tasks }) {
+function Header() {
+  const { tasks } = useContext(TasksContext);
+
   return (
     <header>
       <div>
