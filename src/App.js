@@ -11,7 +11,7 @@ import { TasksContext } from './TasksContext';
 import { TodoList } from './styles';
 
 function App() {
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState('all');
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function App() {
         <TodoList>
           <Header/>
           <TaskForm />
-          <Filter filterCallback={changeFilter}/>
+          <Filter filter={filter} filterCallback={changeFilter}/>
           <TaskList filter={filter} />
         </TodoList>
       </TasksContext.Provider>

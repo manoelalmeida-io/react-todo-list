@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TasksContext } from '../../TasksContext';
 
-// import { Container } from './styles';
+import { ContainerTaskList } from './styles';
 
 import { api } from '../../services/api';
 
@@ -35,11 +35,13 @@ function TaskList({ filter }) {
   return (
     <main>
       {filterTasks().map(task => (
-        <div key={task.id}>
-          <input type="checkbox" checked={task.completed} onChange={e => updateCompletion(task, e.target.checked)}/>
-          <span>{task.title}</span>
+        <ContainerTaskList key={task.id}>
+          <div className="check_title">
+            <input type="checkbox" checked={task.completed} onChange={e => updateCompletion(task, e.target.checked)}/>
+            <span>{task.title}</span>
+          </div>
           <button onClick={() => deleteTask(task)}>X</button>
-        </div>
+        </ContainerTaskList>
       ))}
     </main>
   );

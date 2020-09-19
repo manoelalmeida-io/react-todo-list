@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TodoList = styled.div`
   background-color: #fff;
-  margin-top: 10vh;
+  margin-top: 4vh;
   margin-left: auto;
   margin-right: auto;
   max-width: 358px;
