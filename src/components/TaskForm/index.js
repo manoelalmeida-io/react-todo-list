@@ -10,7 +10,7 @@ import { api } from '../../services/api';
 
 function TaskForm() {
   const { tasks, setTasks } = useContext(TasksContext);
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [show, setShow] = useState(false);
 
